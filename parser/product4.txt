@@ -1,0 +1,6 @@
+
+        price=351 ₽/шт
+        priceOld=667 ₽
+        rating=5
+        reviewCount=5оценок
+    

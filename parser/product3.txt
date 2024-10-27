@@ -1,0 +1,6 @@
+
+        price=389 ₽/кг
+        priceOld=439 ₽
+        rating=4.8
+        reviewCount=1,3Коценок
+    
