@@ -19,6 +19,7 @@
             v-else
             v-for="post of store.postsOnPage"
             :elevation="16"
+            :key="post"
             type="article"
             max-width="600"
             height="140"
@@ -29,14 +30,14 @@
 </template>
 
 <script lang="ts" setup>
-import { usePostsStore } from '@/stores/posts.ts'
+import { usePostsStore } from '@/stores/posts'
 
 const store = usePostsStore()
 
-function load({ done }) {
+function load({ done }: { done: Function }) {
     if (!store.isSearchActive) {
         store.page++
-        if (store.visiblePosts.length >= store.mappedPosts.length) done('empty')
+        if (store.visiblePosts.size >= store.mappedPosts.size) done('empty')
         else done('ok')
     } else {
         done('empty')

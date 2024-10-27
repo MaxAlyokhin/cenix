@@ -41,40 +41,32 @@
 </template>
 
 <script lang="ts" setup>
-import { usePostsStore } from '@/stores/posts.ts'
+import { usePostsStore } from '@/stores/posts'
 
 const props = defineProps(['post'])
 const store = usePostsStore()
 const isEdit = ref(false)
 const message = ref(props.post.name)
 
-function deletePost(id) {
+function deletePost(id: string) {
     store.deletePost(id)
 }
 
-function editPost(id) {
+function editPost(id: string) {
     isEdit.value = true
 }
 
-function sendMessage(id) {
+function sendMessage(id: string) {
     store.editPost({ id: id, name: message.value })
     isEdit.value = false
 }
 
-function clearMessage(id) {
+function clearMessage(id: string) {
     message.value = ''
     store.editPost({ id: id, name: message.value })
 }
 
-// watch(message, (newValue) => {
-//     console.log(newValue);
-
-// })
 onUpdated(() => {
-    // console.log(props.post.name);
-    // console.log(message.value);
-
-
     message.value = props.post.name
 })
 </script>

@@ -40,7 +40,7 @@
 </template>
 
 <script lang="ts" setup>
-import { usePostsStore } from '@/stores/posts.ts'
+import { usePostsStore } from '@/stores/posts'
 
 const store = usePostsStore()
 const newPost = reactive({ id: '', name: '' })
